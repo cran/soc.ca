@@ -4,9 +4,9 @@
 \usage{
 map.add(object, ca.map, plot.type = NULL, ctr.dim = 1, list.mod = NULL,
   list.sup = NULL, list.ind = NULL, point.shape = "variable",
-  point.alpha = 0.8, point.fill = "grey80", point.color = "black",
+  point.alpha = 0.8, point.fill = "whitesmoke", point.color = "black",
   point.size = "freq", label = TRUE, label.alpha = 0.8,
-  label.color = "black", label.size = 3.3, labelx = "default",
+  label.color = "black", label.size = 4, labelx = "default",
   labely = "default", legend = NULL)
 }
 \arguments{
@@ -94,7 +94,7 @@ Add points to an existing map created by one of the soc.ca
 mapping functions.
 }
 \examples{
-example(soc.mca)
+example(soc.ca)
 original.map    <- map.sup(result)
 map.add(result, original.map, plot.type = "ctr", ctr.dim = 2)
 map.add(result, map.ind(result), plot.type = "select",list.ind = 1:50,
