@@ -42,14 +42,14 @@
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map.mod(result)
 #' map.mod(result, dim = c(3, 2), point.size = 2)
 #' @export
 map.mod         <- function(object, dim = c(1, 2),
                             point.shape = "variable", point.alpha = 0.8,
-                            point.fill = "grey80", point.color = "black", point.size = "freq",
-                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                            point.fill = "whitesmoke", point.color = "black", point.size = "freq",
+                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 4,
                             map.title = "mod", labelx = "default", labely = "default", legend = NULL){
   
   plot.type   <- "mod"
@@ -115,15 +115,15 @@ map.mod         <- function(object, dim = c(1, 2),
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map.ctr(result)
 #' map.ctr(result, ctr.dim = c(1, 2))
 #' @export
 
 map.ctr         <- function(object, dim = c(1, 2), ctr.dim = 1,
-                            point.shape = "variable", point.alpha = 0.8, point.fill = "grey80",
+                            point.shape = "variable", point.alpha = 0.8, point.fill = "whitesmoke",
                             point.color = "black", point.size = "freq",
-                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 4,
                             map.title = "ctr", labelx = "default", labely = "default", legend = NULL){
   
   plot.type   <- "ctr"
@@ -189,7 +189,7 @@ map.ctr         <- function(object, dim = c(1, 2), ctr.dim = 1,
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map.active(result)
 #' map.active(result, dim = c(2, 1))
 #' map.active(result, point.size = result$ctr.mod[, 1],
@@ -197,9 +197,9 @@ map.ctr         <- function(object, dim = c(1, 2), ctr.dim = 1,
 #' @export
 
 map.active         <- function(object, dim = c(1, 2),
-                               point.shape = "variable", point.alpha = 0.8, point.fill = "grey80",
+                               point.shape = "variable", point.alpha = 0.8, point.fill = "whitesmoke",
                                point.color = "black", point.size = "freq",
-                               label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                               label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 4,
                                map.title = "active", labelx = "default", labely = "default", legend = NULL){
   
   plot.type   <- "active"
@@ -264,7 +264,7 @@ map.active         <- function(object, dim = c(1, 2),
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map.sup(result)
 #' map.sup(result, dim = c(2, 1))
 #' map.sup(result, point.size = result$coord.sup[, 4],
@@ -272,9 +272,9 @@ map.active         <- function(object, dim = c(1, 2),
 #' @export
 
 map.sup         <- function(object, dim = c(1, 2),
-                            point.shape = "variable", point.alpha = 0.8, point.fill = "grey80",
+                            point.shape = "variable", point.alpha = 0.8, point.fill = "whitesmoke",
                             point.color = "black", point.size = "freq",
-                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 4,
                             map.title = "sup", labelx = "default", labely = "default", legend = NULL){
   
   plot.type     <- "sup"
@@ -336,7 +336,7 @@ map.sup         <- function(object, dim = c(1, 2),
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map.ind(result)
 #' map.ind(result, map.title = "Each individual is given its shape according to a value in a factor",
 #'  point.shape = active[, 1], legend = TRUE)
@@ -349,9 +349,9 @@ map.sup         <- function(object, dim = c(1, 2),
 #' @export
 
 map.ind         <- function(object, dim = c(1, 2),
-                            point.shape = 21, point.alpha = 0.8, point.fill = "grey80",
+                            point.shape = 21, point.alpha = 0.8, point.fill = "whitesmoke",
                             point.color = "black", point.size = 3,
-                            label = FALSE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                            label = FALSE, label.alpha = 0.8, label.color = "black", label.size = 4,
                             map.title = "ind", labelx = "default", labely = "default", legend = NULL){
   
   plot.type   <- "ind"
@@ -425,7 +425,7 @@ map.ind         <- function(object, dim = c(1, 2),
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map.select(result, map.title = "Map of the first ten modalities",list.mod = 1:10)
 #' select   <- active[, 3]
 #' select   <- select == levels(select)[2]
@@ -437,9 +437,9 @@ map.ind         <- function(object, dim = c(1, 2),
 
 map.select         <- function(object, dim = c(1, 2), ctr.dim = 1,
                                list.mod = NULL, list.sup = NULL, list.ind = NULL,
-                               point.shape = "variable", point.alpha = 0.8, point.fill = "grey80",
+                               point.shape = "variable", point.alpha = 0.8, point.fill = "whitesmoke",
                                point.color = "black", point.size = "freq",
-                               label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                               label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 4,
                                map.title = "select", labelx = "default", labely = "default", legend = NULL){
   
   modal.list  <- list(list.mod = list.mod, list.sup = list.sup, list.ind = list.ind)
@@ -519,7 +519,7 @@ map.select         <- function(object, dim = c(1, 2), ctr.dim = 1,
 #'   \link{guides}, \link{theme} and link{guide_legend} functions from the
 #'   ggplot2 package.
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' original.map    <- map.sup(result)
 #' map.add(result, original.map, plot.type = "ctr", ctr.dim = 2)
 #' map.add(result, map.ind(result), plot.type = "select",list.ind = 1:50,
@@ -528,9 +528,9 @@ map.select         <- function(object, dim = c(1, 2), ctr.dim = 1,
 
 map.add         <- function(object, ca.map, plot.type = NULL,
                             ctr.dim = 1, list.mod = NULL, list.sup = NULL, list.ind = NULL,
-                            point.shape = "variable", point.alpha = 0.8, point.fill = "grey80",
+                            point.shape = "variable", point.alpha = 0.8, point.fill = "whitesmoke",
                             point.color = "black", point.size = "freq",
-                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                            label = TRUE, label.alpha = 0.8, label.color = "black", label.size = 4,
                             labelx = "default", labely = "default", legend = NULL){
   p           <- ca.map
   dim         <- ca.map$dimensions
@@ -619,15 +619,76 @@ map.add         <- function(object, ca.map, plot.type = NULL,
   p
 }
 
+
+#' Density plot for the cloud of individuals
+#' 
+#' Draws a 2d density plot on top of an existing soc.ca map. The density is 
+#' calculated by the \link{kde2d} function from MASS and plotted by
+#' \link{geom_density2d} from \link{ggplot2} \code{map.density} uses the
+#' coordinates of the individuals as a basis for the density calculation. 
+#' Borders are arbitrary.
+#' 
+#' @param object a soc.ca class object
+#' @param map a soc.ca map object created by one of the soc.ca mapping functions
+#' @param group a factor determining group membership. Density is mapped for
+#'   each group individually.
+#' @param color a single value or vector determining the color. See the scale
+#'   functions of \link{ggplot2} for ways to alter the scales.
+#' @param alpha a single value or vector determining the alpha.
+#' @param size a single value or vector determining the size of the lines.
+#' @param linetype a single value or vector determining the linetype
+#' @param bins the number of borders. If NULL the default from
+#'   \link{geom_density2d} is used.
+#' @export
+#' @examples
+#' example(soc.ca)
+#' map.density(result, map.ind(result, dim = 2:3, point.alpha = 0.2))
+#' map.density(result, map.ind(result, legend = TRUE, point.alpha = 0.2),
+#'  group = duplicated(active), color = duplicated(active),
+#'  linetype = duplicated(active))
+#' map.density(result, map.ctr(result))
+#' map.density(result, bins = 50)
+
+
+map.density  <- function(object, map = map.ind(object), group = NULL, bins = NULL,
+                         color = "red", alpha = 0.8, size = 0.5, linetype = "solid"){
+  
+  dim                        <- map$dimensions 
+  dens.data                  <- as.data.frame(object$coord.ind[, dim])
+  colnames(dens.data)        <- c("x", "y")
+  
+  density.l                  <- list(color = color,
+                                     alpha = alpha,
+                                     size  = size,
+                                     linetype = linetype,
+                                     group = group,
+                                     bins  = bins)
+  
+  d.i                        <- unlist(lapply(density.l, length)) == 1
+  density.attributes         <- density.l[d.i]
+  density.aes                <- density.l[unlist(lapply(density.l, length)) > 1]
+  density.aes$x              <- dens.data$x
+  density.aes$y              <- dens.data$y
+  
+  
+  density.attributes$mapping <- do.call("aes", density.aes)
+  p     <- map + do.call("geom_density2d", density.attributes, quote = TRUE)
+  p
+}
+
+
+
+
+
 ############################## Plot delfunktioner ########################################
 
 ########################################################
 ## plot.flow
 
 plot.flow   <- function(object, dim = c(1, 2), ctr.dim = NULL, modal.list = NULL,
-                        point.shape = 21, point.alpha = 0.8, point.fill = "grey80",
+                        point.shape = 21, point.alpha = 0.8, point.fill = "whitesmoke",
                         point.color = "black", point.size = 3,
-                        label = FALSE, label.alpha = 0.8, label.color = "black", label.size = 3.3,
+                        label = FALSE, label.alpha = 0.8, label.color = "black", label.size = 4,
                         map.title = map.title, labelx = "default", labely = "default", legend = NULL,
                         plot.type = plot.type){
   
@@ -639,6 +700,7 @@ plot.flow   <- function(object, dim = c(1, 2), ctr.dim = NULL, modal.list = NULL
                            modal.list  = modal.list,
                            point.size  = point.size,
                            point.color = point.color)                 # Data selection
+  
   axis.labels <- plot.axis(labelx = labelx, labely = labely, gg.proc = gg.proc, dim = dim) # Axis labels
   map.title   <- plot.title(map.title = map.title, ctr.dim = ctr.dim) # Plot title
   scales      <- breaksandscales(gg.data)                             # Scales og breaks
@@ -712,7 +774,7 @@ basic.plot <- function(gg.input){
   # label
   if (gg.input$label == TRUE){
     label.attributes             <- gg.input$label.attributes
-    label.attributes$vjust       <- 1.4
+    label.attributes$vjust       <- 1.8
     label.attributes$family      <- "sans"
     label.attributes$lineheight  <- 0.9
     label.attributes$mapping     <- do.call("aes", gg.input$label.aes)
@@ -770,10 +832,10 @@ plot.title  <- function(map.title = NULL, ctr.dim = NULL){
 
 ############# Axis labels
 plot.axis       <- function(labelx = "default", labely = "default", gg.proc = NA, dim = NULL){
-    if (identical(labelx, NULL) == TRUE) {
+    if (identical(labelx, "default") == TRUE) {
 labelx         <- paste(dim[1], ". Dimension: ", gg.proc[dim[1]], "%", sep = "")
 }
-    if (identical(labely, NULL) == TRUE) {
+    if (identical(labely, "default") == TRUE) {
 labely         <- paste(dim[2], ". Dimension: ", gg.proc[dim[2]], "%", sep = "")
 }
 axis.labels <- list(x = labelx, y = labely)
@@ -930,7 +992,7 @@ add.count <- function(x, p, label = TRUE, ...){
 #'   \link{geom_point} and \link{geom_text} from the ggplot2 package
 #' @export
 #' @examples
-#' example(soc.mca)
+#' example(soc.ca)
 #' map <- map.ind(result, point.color = as.numeric(sup$Age))
 #' map <- map + scale_color_continuous(high = "red", low = "yellow")
 #' map.path(result, sup$Age, map)

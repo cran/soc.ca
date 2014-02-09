@@ -3,9 +3,9 @@
 \title{Map the active modalities}
 \usage{
 map.active(object, dim = c(1, 2), point.shape = "variable",
-  point.alpha = 0.8, point.fill = "grey80", point.color = "black",
+  point.alpha = 0.8, point.fill = "whitesmoke", point.color = "black",
   point.size = "freq", label = TRUE, label.alpha = 0.8,
-  label.color = "black", label.size = 3.3, map.title = "active",
+  label.color = "black", label.size = 4, map.title = "active",
   labelx = "default", labely = "default", legend = NULL)
 }
 \arguments{
@@ -72,7 +72,7 @@ Creates a map of the active modalities on two selected
 dimensions.
 }
 \examples{
-example(soc.mca)
+example(soc.ca)
 map.active(result)
 map.active(result, dim = c(2, 1))
 map.active(result, point.size = result$ctr.mod[, 1],
