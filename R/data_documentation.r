@@ -28,6 +28,8 @@
 #' @import scales
 #' @import gridExtra
 #' @import ellipse
+#' @import stats
+#' @import utils
 #' @examples
 #' data(taste)
 #' # Create a data frame of factors containing all the active variables 
