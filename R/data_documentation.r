@@ -24,12 +24,13 @@
 #' @docType package
 #' @name soc.ca
 #' @import ggplot2
-#' @import grid
-#' @import scales
 #' @import gridExtra
 #' @import ellipse
 #' @import stats
 #' @import utils
+#' @import shiny
+#' @import reshape2
+#' @import ggrepel
 #' @examples
 #' data(taste)
 #' # Create a data frame of factors containing all the active variables 
@@ -127,10 +128,10 @@ NULL
 #' result      <- invert(result, c(1, 2, 3))
 #' 
 #' # Export and assign label
-#' export.label(result)
+#' # export.label(result)
 #' 
-#' result      <- assign.label(result,
-#'  file = "https://raw.github.com/Rsoc/soc.ca/master/extra/director_labels.csv")
+#' # result      <- assign.label(result,
+#' #  file = "https://raw.github.com/Rsoc/soc.ca/master/extra/director_labels.csv")
 #' 
 #' 
 #' 
@@ -153,12 +154,12 @@ NULL
 #' 
 #' # Map of individuals
 #' map.ind(result)
-#' map.ind(result, dim = c(2, 1), point.label = TRUE)
+#' map.ind(result, dim = c(2, 1), label = TRUE)
 #' map.ind(result, dim = c(2, 1), point.size = 3, point.shape = 2)
 #' map.ind(result, dim = c(2, 1), map.title = "The top 100 Danish CEO's",
-#'  point.variable = quad, point.colour = quad)
+#' point.color = quad)
 #' # Map of the individuals colored by contribution
-#' map.ind(result, point.colour = result$ctr.ind[, 1],
+#' map.ind(result, point.color = result$ctr.ind[, 1],
 #'  point.shape = 18) + scale_color_continuous(low = "white", high = "red")
 #' 
 #' 
@@ -194,8 +195,8 @@ NULL
 #' map.select(result, list.mod = highcor, list.sup = highdim3, list.ind = forfatter)
 #' 
 #' # Add points to an existing plot
-#' ctrplot     <- map.ctr(result, ctr.dim = 1, colour = "red")
-#' map.add(result, ctrplot, data.type = "ctr", ctr.dim = 2, colour = "blue")
+#' ctrplot     <- map.ctr(result, ctr.dim = 1, point.color = "red")
+#' map.add(result, ctrplot, data.type = "ctr", ctr.dim = 2, point.color = "blue")
 #' 
 #' # Using the list option in add.points
 #' forfatter    <- author == "Forfatter"
@@ -204,7 +205,7 @@ NULL
 #' # Using the list option in add.points to add labels to only a part of the cloud of individuals
 #' forfatter     <- author == "Forfatter"
 #' notforfatter  <- author != "Forfatter"
-#' map.forfatter <- map.select(result, list.ind = notforfatter, point.label = FALSE)
+#' map.forfatter <- map.select(result, list.ind = notforfatter, label = FALSE)
 #' map.forfatter
 #' map.forfatter <- map.add(result, map.forfatter, data.type = "select", list.ind = forfatter)
 #' map.forfatter
@@ -240,7 +241,7 @@ NULL
 #' @references Le Roux, Brigitte, Henry Rouanet, Mike Savage, og Alan Warde. 2008. "Class and Cultural Division in the UK". Sociology 42(6):1049-1071.
 #' @references Le Roux, B., og H. Rouanet. 2010. Multiple correspondence analysis. Thousand Oaks: Sage.
 #' @keywords data
-#' #' @examples
+#' @examples
 #' \dontrun{
 #' # The taste example
 #' data(taste)
