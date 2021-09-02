@@ -4,8 +4,16 @@
 \alias{csa.measures}
 \title{CSA measures}
 \usage{
-csa.measures(csa.object, correlations = TRUE, cosines = TRUE,
-  cosine.angles = TRUE, dim = 1:5, format = TRUE, ...)
+csa.measures(
+  csa.object,
+  correlations = FALSE,
+  cosines = TRUE,
+  cosine.angles = TRUE,
+  dim.mca = 1:5,
+  dim.csa = 1:5,
+  format = TRUE,
+  ...
+)
 }
 \arguments{
 \item{csa.object}{is a "soc.csa" class object created by the \link{soc.csa} function}
@@ -16,7 +24,9 @@ csa.measures(csa.object, correlations = TRUE, cosines = TRUE,
 
 \item{cosine.angles}{if TRUE angles are calculated in the basis of the cosine values}
 
-\item{dim}{is the dimensions included}
+\item{dim.mca}{the dimensions included from the original mca}
+
+\item{dim.csa}{the dimensions included from the csa}
 
 \item{format}{if TRUE results are formatted, rounded and printed for screen reading, if FALSE the raw numbers are returned}
 
@@ -31,6 +41,5 @@ Several measures for the evaluation of the relations between the dimensions of t
 \examples{
 example(soc.csa)
 csa.measures(res.csa)
-csa.measures(res.csa, correlations = FALSE, cosine.angles = FALSE, dim = 1:10, format = FALSE)
+csa.measures(res.csa, correlations = FALSE, cosine.angles = FALSE, dim.mca = 1:5, format = FALSE)
 }
-

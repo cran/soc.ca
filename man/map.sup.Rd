@@ -4,12 +4,25 @@
 \alias{map.sup}
 \title{Map the supplementary modalities}
 \usage{
-map.sup(object, dim = c(1, 2), point.shape = "variable",
-  point.alpha = 0.8, point.fill = "whitesmoke", point.color = "black",
-  point.size = "freq", label = TRUE, label.repel = TRUE,
-  label.alpha = 0.8, label.color = "black", label.size = 4,
-  label.fill = NULL, map.title = "sup", labelx = "default",
-  labely = "default", legend = NULL)
+map.sup(
+  object,
+  dim = c(1, 2),
+  point.shape = "variable",
+  point.alpha = 0.8,
+  point.fill = "whitesmoke",
+  point.color = "black",
+  point.size = "freq",
+  label = TRUE,
+  label.repel = TRUE,
+  label.alpha = 0.8,
+  label.color = "black",
+  label.size = 4,
+  label.fill = NULL,
+  map.title = "sup",
+  labelx = "default",
+  labely = "default",
+  legend = NULL
+)
 }
 \arguments{
 \item{object}{a soc.ca class object as created by \link{soc.mca} and 
@@ -79,4 +92,3 @@ map.sup(result, dim = c(2, 1))
 map.sup(result, point.size = result$coord.sup[, 4],
  map.title = "All supplementary modalities with size according to coordinate on the 4th dimension")
 }
-

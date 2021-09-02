@@ -2,19 +2,34 @@
 % Please edit documentation in R/functions_analysis.r
 \name{soc.mca}
 \alias{soc.mca}
-\title{Specific Multiple Correspondence Analysis}
+\title{soc.mca
+
+\code{soc.mca} performs a specific multiple correspondence analysis on a data.frame of factors, where cases are rows and columns are variables.}
 \usage{
-soc.mca(active, sup = NULL, identifier = NULL,
-  passive = getOption("passive", default = "Missing"))
+soc.mca(
+  active,
+  sup = NULL,
+  identifier = NULL,
+  passive = getOption("passive", default = "Missing"),
+  weight = NULL,
+  Moschidis = FALSE,
+  detailed.results = FALSE
+)
 }
 \arguments{
-\item{active}{Defines the active modalities in a data.frame with rows of individuals and columns of factors, without NA's'}
+\item{active}{Defines the active modalities in a data.frame with rows of individuals and columns of factors, without NA's'. Active can also be a named list of data.frames. The data.frames will correspond to the analytical headings.}
 
 \item{sup}{Defines the supplementary modalities in a data.frame with rows of individuals and columns of factors, without NA's}
 
 \item{identifier}{A single vector containing a single value for each row/individual in x and sup. Typically a name or an id.number.}
 
 \item{passive}{A single character vector with the full or partial names of the passive modalities. All names that have a full or partial match will be set as passive.}
+
+\item{weight}{a numeric vector with the weights for the individual rows. The weight is normalized afterwardsds.}
+
+\item{Moschidis}{If TRUE adjusts contribution values for rare modalities. see \link{moschidis}.}
+
+\item{detailed.results}{If FALSE the result object is trimmed to reduce its memory footprint.}
 }
 \value{
 \item{nd}{Number of active dimensions}
@@ -38,10 +53,13 @@ soc.mca(active, sup = NULL, identifier = NULL,
  \item{names.sup}{The names of the supplementary modalities}
  \item{names.passive}{The names of the passive modalities}
  \item{modal}{A matrix with the number of modalities per variable and their location}
- \item{variable}{A vector with the name of the variable of the active modalities}
+ \item{variable}{A character vector with the name of the variable of the active modalities}
+ \item{Rosenlund.tresh}{A numeric vector with the contribution values adjusted with the Rosenlund threshold, see:  see p 92 in: Rosenlund, Lennart. Exploring the City with Bourdieu: Applying Pierre Bourdieu’s Theories and Methods to Study the Community. Saarbrücken: VDM Verlag Dr. Müller, 2009.}
+ \item{t.test.sup}{A matrix with a the student t-test of the coordinates of the supplementary variables}
+ \item{Share.of.var}{A matrix the share of variance for each variable}
 }
 \description{
-\code{soc.mca} performs a specific multiple correspondence analysis on a data.frame of factors, where cases are rows and columns are variables.
+Specific Multiple Correspondence Analysis
 }
 \examples{
 # Loads the "taste" dataset included in this package
@@ -66,17 +84,18 @@ options(passive = c("Film: CostumeDrama", "TV: Tv-Sport"))
 soc.mca(active, sup)
 options(passive = NULL)
 }
-\author{
-Anton Grau Larsen, University of Copenhagen
-
-Stefan Bastholm Andrade, University of Copenhagen
-
-Christoph Ellersgaard, University of Copenhagen
-}
 \references{
 Le Roux, B., og H. Rouanet. 2010. Multiple correspondence analysis. Thousand Oaks: Sage.
 }
 \seealso{
 \link{soc.csa}, \link{contribution}
 }
+\author{
+Anton Grau Larsen
 
+Jacob Lunding
+
+Stefan Bastholm Andrade
+
+Christoph Ellersgaard
+}

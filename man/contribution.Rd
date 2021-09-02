@@ -4,8 +4,14 @@
 \alias{contribution}
 \title{Summaries of contribution values}
 \usage{
-contribution(object, dim = 1, all = FALSE, indices = FALSE,
-  mode = "sort")
+contribution(
+  object,
+  dim = 1,
+  all = FALSE,
+  indices = FALSE,
+  mode = "sort",
+  matrix.output = FALSE
+)
 }
 \arguments{
 \item{object}{a \link{soc.ca} object}
@@ -21,6 +27,8 @@ modalities or individuals}
 \item{mode}{indicates which form of output. Possible values: \code{"sort"},
 \code{"mod"}, \code{"ind"}, \code{"variable"}. If the mode is
 \code{"variable"}, \code{dim} can be a sequence of dimensions: \code{1:5}}
+
+\item{matrix.output}{if TRUE; returns output as a matrix instead of as printed output.}
 }
 \value{
 Each mode prints different results:
@@ -51,4 +59,3 @@ contribution(result, 1:2, mode = "variable")
 \seealso{
 \link{map.ctr}
 }
-

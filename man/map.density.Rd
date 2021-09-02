@@ -4,8 +4,15 @@
 \alias{map.density}
 \title{Density plot for the cloud of individuals}
 \usage{
-map.density(object, map = map.ind(object), group = NULL, color = "red",
-  alpha = 0.8, size = 0.5, linetype = "solid")
+map.density(
+  object,
+  map = map.ind(object),
+  group = NULL,
+  color = "red",
+  alpha = 0.8,
+  size = 0.5,
+  linetype = "solid"
+)
 }
 \arguments{
 \item{object}{a soc.ca class object}
@@ -39,4 +46,3 @@ map.density(result, map.ind(result, legend = TRUE, point.alpha = 0.2),
  linetype = duplicated(active))
 map.density(result, map.ctr(result))
 }
-

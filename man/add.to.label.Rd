@@ -4,8 +4,7 @@
 \alias{add.to.label}
 \title{Add values to label}
 \usage{
-add.to.label(object, value = "freq", prefix = "default", suffix = ")",
-  dim = 1)
+add.to.label(object, value = "freq", prefix = "default", suffix = ")", dim = 1)
 }
 \arguments{
 \item{object}{is a soc.ca object}
@@ -39,4 +38,3 @@ result.label  <- add.to.label(result, value = "linebreak")
 result.label$names.mod
 map.ctr(result.label)
 }
-

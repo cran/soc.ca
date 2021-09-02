@@ -4,8 +4,15 @@
 \alias{map.path}
 \title{Map path along an ordered variable}
 \usage{
-map.path(object, x, map = map.ind(object, dim), dim = c(1, 2),
-  label = TRUE, min.size = length(x)/10, ...)
+map.path(
+  object,
+  x,
+  map = map.ind(object, dim),
+  dim = c(1, 2),
+  label = TRUE,
+  min.size = length(x)/10,
+  ...
+)
 }
 \arguments{
 \item{object}{is a soc.ca result object}
@@ -37,4 +44,3 @@ map <- map.ind(result, point.color = as.numeric(sup$Age))
 map <- map + scale_color_continuous(high = "red", low = "yellow")
 map.path(result, sup$Age, map)
 }
-
